@@ -4,38 +4,43 @@
 #include "Date_time.h"
 #include "Address.h"
 #include "Base.h"
+using namespace std;
 
 class Vehicle {  //ideias para funcoes para aqui??
 	Date registration_date;
-	std::string type;
-	std::string brand;
+	string type;
+	string brand;
 
 public:
 	Vehicle();
-	Vehicle(std::istream & stream);
-
+	Vehicle(istream & stream);
+	Vehicle(Date data, string tipo, string marca);
 	~Vehicle();
 
+	void setRegistrationDate(Date data);
+	void setType(string tipo);
+	void setBrand(string marca);
 	Date get_registration_date();
-	std::string get_type();
-	std::string get_brand();
+	string get_type();
+	string get_brand();
 };
 
 class Person {
 protected:
-	std::string name;
+	string name;
 	size_t NIF;
 
 public:
 	Person();
-	Person(std::string nm, size_t nif);
+	Person(string nm, size_t nif);
 
 	~Person();
 
-
-	bool set_NIF(); // tratar da entrada ; excepcoes aqui ??
-	bool set_name();
-
+ // tratar da entrada ; excepcoes aqui ??
+	void set_name(string nome);
+	void set_NIF(size_t NIF);
+	string getName();
+	size_t getNIF();
 	virtual void print();
 
 };
@@ -47,35 +52,52 @@ protected:
 
 public:
 	Worker();
+	Worker(Date data, size_t salario);
 
 	~Worker();
+
+	void setBirthday(Date data);
+	void setWage(size_t salario);
+	Date getBirthday();
+	size_t getWage();
 
 	virtual void print();
 };
 
 class Admin : public Worker {
-	std::string role;
+	string role;
 
 public:
 	Admin();
-	Admin(std::istream & stream);
+	Admin(string papel):
+	Admin(istream & stream);
 
 	~Admin();
+
+	void setRole(string papel);
+	string getRole();
 
 	void print();
 };
 
 class Delivery : public Worker {
 	Vehicle * vehicle;
-	std::vector<Order*> history;
+	vector<Order*> history;
 
 public:
 	Delivery();
-	Delivery(std::istream & stream);
+	Delivery(istream & stream);
+	Delivery(Vehicle * veiculo, vector<Order*> historial);
 
 	~Delivery();
 
+
+	void setVehicle(Vehicle * veiculo);
+	void setHistory(vector<Order*> historial);
+	Vehicle * getVehicle();
+	vector<Order*> getHistory();
 	size_t calculate_wage();
+
 };
 
 class Client : public Person {
@@ -86,7 +108,7 @@ class Client : public Person {
 
 public:
 	Client();
-	Client(std::istream & stream);
+	Client(istream & stream);
 
 	~Client();
 
