@@ -98,7 +98,7 @@ Worker::Worker()
 {
 }
 
-Worker::Worker(Date data, size_t salario)
+Worker::Worker(string nm, size_t nif, Date data, size_t salario) : Person(nm, nif)
 {
 	birthday = data;
 	wage = salario;
@@ -139,7 +139,7 @@ Admin::Admin()
 
 }
 
-Admin::Admin(string papel)
+Admin::Admin(string nm, size_t nif, Date data, size_t salario, string papel) : Worker(nm, nif, data, salario)
 {
 	role = papel;
 }
@@ -180,7 +180,96 @@ Delivery::Delivery(istream & stream) //????
 
 }
 
-Delivery::Delivery(Vehicle * veiculo, vector <Order*> historial)
+Delivery::Delivery(string nm, size_t nif, Date data, size_t salario, Vehicle * veiculo, vector <Order*> historial) : Worker(nm, nif, data, salario)
+{
+	vehicle = veiculo;
+	history = historial;
+}
+
+Delivery::~Delivery()
+{
+
+}
+
+void Delivery::setVehicle(Vehicle * veiculo)
+{
+	vehicle = veiculo;
+}
+
+void Delivery::setHistory(vector<Order*> historial)
+{
+	history = historial;
+}
+
+Vehicle * Delivery::getVehicle()
+{
+	return vehicle;
+}
+
+vector<Order*> Delivery::getHistory()
+{
+	return history;
+}
+
+size_t Delivery::calculate_wage() //implementar dps
+{
+
+}
+
+Client::Client()
+{
+
+}
+
+Client::Client(istream & stream) //?????
+{
+
+}
+
+Client::Client(string nm, size_t nif,Address add, bool black, Base* b) : Person(nm, nif)
+{
+	address = add;
+	blacklisted = black;
+	base = b;
+
+}
+
+Client::~Client()
+{
+
+}
+
+void Client::setAddress(Address add)
+{
+	address = add;
+}
+
+void Client::setBlackListed(bool black)
+{
+	blacklisted = black;
+}
+
+void Client::setBase(Base * b)
+{
+	base = b;
+}
+
+Address Client::getAddress()
+{
+	return address;
+}
+
+bool Client::getBlackListed()
+{
+	return blacklisted;
+}
+
+Base * Client::getBase()
+{
+	return base;
+}
+
+void Client::print() //implementar dps
 {
 
 }

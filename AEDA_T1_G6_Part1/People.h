@@ -52,7 +52,7 @@ protected:
 
 public:
 	Worker();
-	Worker(Date data, size_t salario);
+	Worker(string nm, size_t nif, Date data, size_t salario);
 
 	~Worker();
 
@@ -69,7 +69,7 @@ class Admin : public Worker {
 
 public:
 	Admin();
-	Admin(string papel):
+	Admin(string nm, size_t nif, Date data, size_t salario, string papel):
 	Admin(istream & stream);
 
 	~Admin();
@@ -87,7 +87,7 @@ class Delivery : public Worker {
 public:
 	Delivery();
 	Delivery(istream & stream);
-	Delivery(Vehicle * veiculo, vector<Order*> historial);
+	Delivery(string nm, size_t nif, Date data, size_t salario, Vehicle * veiculo, vector<Order*> historial);
 
 	~Delivery();
 
@@ -109,8 +109,16 @@ class Client : public Person {
 public:
 	Client();
 	Client(istream & stream);
+	Client(string nm, size_t nif, Address add, bool black, Base * b);
 
 	~Client();
+
+	void setAddress(Address add);
+	void setBlackListed(bool black);
+	void setBase(Base * b);
+	Address getAddress();
+	bool getBlackListed();
+	Base * getBase();
 
 	void print();
 };
