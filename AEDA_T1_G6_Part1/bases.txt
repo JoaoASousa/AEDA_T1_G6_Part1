@@ -1,0 +1,18 @@
+Porto
+Rua azul / asdasd / asdas d / 2323
+workers_p.txt
+clients_p.txt
+restaurants_p.txt
+;;;
+Faro
+Rua amarela / asdasd / asdas d / 2323
+workers_f.txt
+clients_f.txt
+restaurants_f.txt
+;;;
+Lisboa
+Rua verde / asdasd / asdas d / 2323
+workers_l.txt
+clients_l.txt
+restaurants_l.txt
+;;;

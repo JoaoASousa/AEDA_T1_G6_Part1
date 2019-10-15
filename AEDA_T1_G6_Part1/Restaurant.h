@@ -7,7 +7,6 @@
 using namespace std;
 
 //opertor overload fica em private ou public ???
-//temos de ver como organizar os ficheiros em geral
 
 class Product {
 	string name;
@@ -17,8 +16,7 @@ class Product {
 public:
 	Product();
 	Product(istream & stream);
-	Product(string nm, string ct, size_t p);
-
+	
 	~Product();
 
 	
@@ -40,8 +38,7 @@ class Restaurant {
 public:
 	Restaurant();
 	Restaurant(istream & stream);
-	Restaurant(Address add, vector <string> cts, vector <Product*> ps, size_t p, Base* b);
-
+	
 	~Restaurant();
 
 	void setAddress(Address add);
@@ -63,6 +60,7 @@ public:
 };
 
 class Order {
+	size_t id;
 	Base * base;
 	Restaurant * restaurant;
 	Client * client;
@@ -74,7 +72,6 @@ class Order {
 
 public:
 	Order();
-	Order(Base * b, Restaurant * r, Client * c, vector <Product*> p, time_t t, bool s, string message, size_t fee);
 
 	~Order();
 

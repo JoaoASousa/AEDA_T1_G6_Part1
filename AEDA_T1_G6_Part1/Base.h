@@ -20,7 +20,6 @@ private:
 	vector<Restaurant*> restaurants;
 public:
 	Base();
-	Base(Address add, Coords coordenadas, Admin * administrador, vector<Client*> clients_vec, vector<Restaurant*> restaurants_vec);
 	~Base();
 	void setAddress(Address add);
 	void setCoords(Coords coordenadas);

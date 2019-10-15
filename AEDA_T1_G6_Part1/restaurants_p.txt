@@ -1,0 +1,11 @@
+Macdonal
+Rua do fundo / asd 
+Buger : Hambruhger : 5
+Frie : Fast Food : 2
+aice crime : Dessert : 1.5
+;;;
+Pizza Hut
+Rua de la / asdasd
+pepperooni : Pizza : 7
+conk : Drink : 2
+;;;

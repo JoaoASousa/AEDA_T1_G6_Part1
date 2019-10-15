@@ -1,0 +1,20 @@
+Rafael Nadal
+Rua vermelha / asdasda
+231234324
+30
+;;;
+Salvador Sobral
+Avenida azul / asdasd
+234567654
+10
+;;;
+Rui Rio
+Vale dos gansos / asdasd
+231234567
+3000
+;;;
+ytka
+Unknown / asdasd
+999999999
+0
+;;;

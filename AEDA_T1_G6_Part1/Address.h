@@ -16,6 +16,7 @@ class Address {
 	string street;
 	unsigned int number;
 	int floor; //if non-aplicable, =-1
+	Coords coords;
 
 public:
 	Address();

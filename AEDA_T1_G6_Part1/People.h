@@ -102,7 +102,6 @@ public:
 
 class Client : public Person {
 	Address address;
-	bool blacklisted;
 	Base * base;
 
 
