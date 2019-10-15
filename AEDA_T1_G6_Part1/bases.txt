@@ -15,4 +15,3 @@ Rua verde / asdasd / asdas d / 2323
 workers_l.txt
 clients_l.txt
 restaurants_l.txt
-;;;
