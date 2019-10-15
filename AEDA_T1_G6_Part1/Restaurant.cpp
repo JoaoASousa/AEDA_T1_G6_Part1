@@ -5,18 +5,6 @@ Product::Product()
 
 }
 
-Product::Product(istream & stream) //implementar dps
-{
-
-}
-
-Product::Product(string nm, string ct, size_t p)
-{
-	name = nm; 
-	cuisine_type = ct;
-	price = p;
-}
-
 Product::~Product()
 {
 
@@ -55,20 +43,6 @@ size_t Product::get_price() const
 Restaurant::Restaurant()
 {
 
-}
-
-Restaurant::Restaurant(istream & stream) //implementar dps
-{
-
-}
-
-Restaurant::Restaurant(Address add, vector <string> cts, vector <Product*> ps, size_t p, Base* b)
-{
-	address = add;
-	cuisine_types = cts;
-	products = ps;
-	price_average = p;
-	base = b;
 }
 
 Restaurant::~Restaurant()
@@ -132,7 +106,7 @@ void Restaurant::update_price_average() //implementar depois
 
 }
 
-void Restaurant::print_price_average() //implementar depois - não seria necessário aqui um ostream ???
+void Restaurant::print_price_average() //implementar depois - nï¿½o seria necessï¿½rio aqui um ostream ???
 {
 
 }
@@ -150,18 +124,6 @@ bool Restaurant::add_product() //implementar depois
 Order::Order()
 {
 
-}
-
-Order::Order(Base * b, Restaurant * r, Client * c, vector <Product*> p, time_t t, bool s, string message, size_t fee)
-{
-	base = b;
-	restaurant = r;
-	client = c;
-	products = p;
-	time = t;
-	success = s;
-	insuccess_message = message;
-	delivery_fee = fee;
 }
 
 Order::~Order()

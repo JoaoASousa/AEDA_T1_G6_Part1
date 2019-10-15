@@ -5,26 +5,22 @@
 #include <string>
 using namespace std;
 
-class Coords {
-	double latitude;
-	double longitude;
-};
-
 class Address {
 	string town;
 	string district;
 	string street;
 	unsigned int number;
 	int floor; //if non-aplicable, =-1
-	Coords coords;
+	double latitude;
+	double longitude;
 
 public:
 	Address();
-	Address(string str);
-	Address(string tn,string dstr,string str, unsigned int numb, int flr = -1);
 
 	~Address();
 	
+	void parse(string str);
+
 	void setTown(string cidade);
 	void setDistrict(string distrito);
 	void setStreet(string rua);

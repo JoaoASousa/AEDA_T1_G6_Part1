@@ -1,20 +1,8 @@
 #include "Address.h"
+#include <vector>
+#include "utils.h"
 
 Address::Address() {
-
-}
-
-Address::Address(string tn, string dstr, string str, unsigned int numb, int flr = -1)
-{
-	town = tn;
-	district = dstr;
-	street = str;
-	number = numb;
-	floor = flr;
-}
-
-Address::Address(string str) //Implementar depois
-{
 
 }
 
@@ -22,60 +10,71 @@ Address::~Address() {
 
 }
 
-void Address::setTown(string cidade)
-{
+void Address::parse(string str) { //needs reinforcing lmao aka apanhar excecoes dos stois
+	vector<string> parts = utils::split(str,'/');
+	for (auto &part : parts) utils::trim(part);
+
+	town = parts.at(0);
+	district = parts.at(1);
+	street = parts.at(2);
+	
+	try{
+	number = stoi(parts.at(3));
+	floor = stoi(parts.at(4));
+	latitude = stoi(parts.at(5));
+	longitude = stoi(parts.at(6));
+	}
+	catch (...){
+		//throw algo
+	}
+}
+
+void Address::setTown(string cidade) {
 	town = cidade;
 }
 
-void Address::setDistrict(string distrito)
-{
+void Address::setDistrict(string distrito) {
 	district = distrito;
 }
 
-void Address::setStreet(string rua)
-{
+void Address::setStreet(string rua) {
 	street = rua;
 }
 
-void Address::setNumber(unsigned int n)
-{
+void Address::setNumber(unsigned int n) {
 	number = n;
 }
 
-void Address::setFloor(int flr = -1)
-{
+void Address::setFloor(int flr = -1) {
 	floor = flr;
 }
 
-string Address::get_town() const
-{
+string Address::get_town() const {
 	return town;
 }
 
-string Address::get_district() const
-{
+string Address::get_district() const {
 	return district;
 }
 
-string Address::get_street() const
-{
+string Address::get_street() const {
 	return street;
 }
 
-unsigned int Address::get_number() const
-{
+unsigned int Address::get_number() const {
 	return number;
 }
 
-int Address::get_floor() const
-{
+int Address::get_floor() const {
 	return floor;
 }
 
 std::ostream & operator<<(std::ostream & stream, Address address) {
 	// IN PROGRESS
-	stream << "Town: " << address.town;
-	stream << "District: " << address.district;
-	stream << "Street: " << address.street;
-	stream << "Number: " << address.number;
+	stream << "Town: " << address.town << endl;
+	stream << "District: " << address.district << endl;
+	stream << "Street: " << address.street << endl;
+	stream << "Number: " << address.number << endl;
+
+	return stream;
 }

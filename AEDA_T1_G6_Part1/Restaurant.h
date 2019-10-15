@@ -15,7 +15,6 @@ class Product {
 
 public:
 	Product();
-	Product(istream & stream);
 	
 	~Product();
 
@@ -37,7 +36,6 @@ class Restaurant {
 
 public:
 	Restaurant();
-	Restaurant(istream & stream);
 	
 	~Restaurant();
 

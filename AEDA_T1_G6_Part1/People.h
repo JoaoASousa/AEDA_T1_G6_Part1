@@ -13,8 +13,7 @@ class Vehicle {  //ideias para funcoes para aqui??
 
 public:
 	Vehicle();
-	Vehicle(istream & stream);
-	Vehicle(Date data, string tipo, string marca);
+
 	~Vehicle();
 
 	void setRegistrationDate(Date data);
@@ -32,7 +31,6 @@ protected:
 
 public:
 	Person();
-	Person(string nm, size_t nif);
 
 	~Person();
 
@@ -52,7 +50,6 @@ protected:
 
 public:
 	Worker();
-	Worker(string nm, size_t nif, Date data, size_t salario);
 
 	~Worker();
 
@@ -69,8 +66,6 @@ class Admin : public Worker {
 
 public:
 	Admin();
-	Admin(string nm, size_t nif, Date data, size_t salario, string papel):
-	Admin(istream & stream);
 
 	~Admin();
 
@@ -86,8 +81,6 @@ class Delivery : public Worker {
 
 public:
 	Delivery();
-	Delivery(istream & stream);
-	Delivery(string nm, size_t nif, Date data, size_t salario, Vehicle * veiculo, vector<Order*> historial);
 
 	~Delivery();
 
@@ -107,8 +100,6 @@ class Client : public Person {
 
 public:
 	Client();
-	Client(istream & stream);
-	Client(string nm, size_t nif, Address add, bool black, Base * b);
 
 	~Client();
 
