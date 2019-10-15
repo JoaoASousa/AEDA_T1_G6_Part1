@@ -3,6 +3,7 @@
 
 #include <ctime>
 #include <iostream>
+using namespace std;
 
 class Date {
 	size_t day;
@@ -11,20 +12,24 @@ class Date {
 
 public:
 	Date();
-	Date(std::string s);
-	Date(unsigned short int day, unsigned short int month, unsigned short int year);
+	Date(string s);
+	Date(size_t d, size_t m, size_t y);
 
 	~Date();
 
+	void setDay(size_t d);
+	void setMonth(size_t m);
+	void setYear(size_t y);
 	size_t get_day() const;
 	size_t get_month() const;
 	size_t get_year() const;
 
-	std::string str() const;
+	string str() const;
 
+	//Implementar depois
 	friend bool operator==(const Date & l, const Date & r);
 	friend bool operator<(const Date & l, const Date & r);  //const??
-	friend std::ostream & operator<<(std::ostream & stream, const Date & date);
+	friend ostream & operator<<(std::ostream & stream, const Date & date);
 
 };
 

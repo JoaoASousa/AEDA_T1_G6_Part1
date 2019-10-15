@@ -38,17 +38,17 @@ void Vehicle::setBrand(string marca)
 	brand = marca;
 }
 
-Date Vehicle::get_registration_date()
+Date Vehicle::get_registration_date() const
 {
 	return registration_date;
 }
 
-string Vehicle::get_type()
+string Vehicle::get_type() const
 {
 	return type;
 }
 
-string Vehicle::get_brand()
+string Vehicle::get_brand() const
 {
 	return brand;
 }
@@ -79,12 +79,12 @@ void Person::set_NIF(size_t NIF)
 	this->NIF = NIF;
 }
 
-string Person::getName()
+string Person::getName() const
 {
 	return name;
 }
 
-size_t Person::getNIF()
+size_t Person::getNIF() const
 {
 	return NIF;
 }
@@ -119,12 +119,12 @@ void Worker::setWage(size_t salario)
 	wage = salario;
 }
 
-Date Worker::getBirthday()
+Date Worker::getBirthday() const
 {
 	return birthday;
 }
 
-size_t Worker::getWage()
+size_t Worker::getWage() const
 {
 	return wage;
 }
@@ -159,7 +159,7 @@ void Admin::setRole(string papel)
 	role = papel;
 }
 
-string Admin::getRole()
+string Admin::getRole() const
 {
 	return role;
 }
@@ -201,12 +201,12 @@ void Delivery::setHistory(vector<Order*> historial)
 	history = historial;
 }
 
-Vehicle * Delivery::getVehicle()
+Vehicle * Delivery::getVehicle() const
 {
 	return vehicle;
 }
 
-vector<Order*> Delivery::getHistory()
+vector<Order*> Delivery::getHistory() const
 {
 	return history;
 }
@@ -254,17 +254,17 @@ void Client::setBase(Base * b)
 	base = b;
 }
 
-Address Client::getAddress()
+Address Client::getAddress() const
 {
 	return address;
 }
 
-bool Client::getBlackListed()
+bool Client::getBlackListed() const
 {
 	return blacklisted;
 }
 
-Base * Client::getBase()
+Base * Client::getBase() const
 {
 	return base;
 }

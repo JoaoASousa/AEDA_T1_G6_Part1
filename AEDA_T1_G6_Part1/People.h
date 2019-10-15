@@ -20,9 +20,9 @@ public:
 	void setRegistrationDate(Date data);
 	void setType(string tipo);
 	void setBrand(string marca);
-	Date get_registration_date();
-	string get_type();
-	string get_brand();
+	Date get_registration_date() const;
+	string get_type() const;
+	string get_brand() const;
 };
 
 class Person {
@@ -39,8 +39,8 @@ public:
  // tratar da entrada ; excepcoes aqui ??
 	void set_name(string nome);
 	void set_NIF(size_t NIF);
-	string getName();
-	size_t getNIF();
+	string getName() const;
+	size_t getNIF() const;
 	virtual void print();
 
 };
@@ -58,8 +58,8 @@ public:
 
 	void setBirthday(Date data);
 	void setWage(size_t salario);
-	Date getBirthday();
-	size_t getWage();
+	Date getBirthday() const;
+	size_t getWage() const;
 
 	virtual void print();
 };
@@ -75,7 +75,7 @@ public:
 	~Admin();
 
 	void setRole(string papel);
-	string getRole();
+	string getRole() const;
 
 	void print();
 };
@@ -94,8 +94,8 @@ public:
 
 	void setVehicle(Vehicle * veiculo);
 	void setHistory(vector<Order*> historial);
-	Vehicle * getVehicle();
-	vector<Order*> getHistory();
+	Vehicle * getVehicle() const;
+	vector<Order*> getHistory() const;
 	size_t calculate_wage();
 
 };
@@ -116,9 +116,9 @@ public:
 	void setAddress(Address add);
 	void setBlackListed(bool black);
 	void setBase(Base * b);
-	Address getAddress();
-	bool getBlackListed();
-	Base * getBase();
+	Address getAddress() const;
+	bool getBlackListed() const;
+	Base * getBase() const;
 
 	void print();
 };

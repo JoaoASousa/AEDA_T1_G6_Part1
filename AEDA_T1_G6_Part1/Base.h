@@ -23,11 +23,11 @@ public:
 	void setAdmin(Admin * administrador);
 	void setClients(vector<Client*> clients);
 	void setRestaurants(vector<Restaurant*> restaurants);
-	Address getAddress();
-	Coords getCoords();
-	Admin * getAdmin();
-	vector<Client*> getClients();
-	vector<Restaurant*> getRestaurants();
+	Address getAddress() const;
+	Coords getCoords() const;
+	Admin * getAdmin() const;
+	vector<Client*> getClients() const;
+	vector<Restaurant*> getRestaurants() const;
 
 };
 

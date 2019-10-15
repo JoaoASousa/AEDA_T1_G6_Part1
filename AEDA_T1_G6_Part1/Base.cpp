@@ -45,27 +45,27 @@ void Base::setRestaurants(vector<Restaurant*> restaurants)
 	this->restaurants = restaurants;
 }
 
-Address Base::getAddress()
+Address Base::getAddress() const
 {
 	return address;
 }
 
-Coords Base::getCoords()
+Coords Base::getCoords() const
 {
 	return coords;
 }
 
-Admin * Base::getAdmin()
+Admin * Base::getAdmin() const
 {
 	return admin;
 }
 
-vector<Client*> Base::getClients()
+vector<Client*> Base::getClients() const
 {
 	return clients;
 }
 
-vector<Restaurant*> Base::getRestaurants()
+vector<Restaurant*> Base::getRestaurants() const
 {
 	return restaurants;
 }

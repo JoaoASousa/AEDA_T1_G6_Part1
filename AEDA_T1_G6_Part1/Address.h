@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+using namespace std;
 
 class Coords {
 	double latitude;
@@ -10,26 +11,31 @@ class Coords {
 };
 
 class Address {
-	std::string town;
-	std::string district;
-	std::string street;
+	string town;
+	string district;
+	string street;
 	unsigned int number;
 	int floor; //if non-aplicable, =-1
 
 public:
 	Address();
-	Address(std::string str);
-	Address(std::string tn, std::string dstr, std::string str, unsigned int numb, int flr = -1);
+	Address(string str);
+	Address(string tn,string dstr,string str, unsigned int numb, int flr = -1);
 
 	~Address();
+	
+	void setTown(string cidade);
+	void setDistrict(string distrito);
+	void setStreet(string rua);
+	void setNumber(unsigned int n);
+	void setFloor(int flr = -1);
+	string get_town() const;
+	string get_district() const;
+	string get_street() const;
+	unsigned int get_number() const;
+	int get_floor() const;
 
-	std::string get_town();
-	std::string get_district();
-	std::string get_street();
-	unsigned int get_number();
-	int get_floor();
-
-	friend std::ostream & operator<<(std::ostream & stream, Address address);
+	friend ostream & operator<<(std::ostream & stream, Address address);
 
 
 
