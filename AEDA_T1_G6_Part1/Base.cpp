@@ -1,5 +1,6 @@
 #include "Base.h"
 
+
 Base::Base()
 {
 
@@ -69,3 +70,17 @@ vector<Restaurant*> Base::getRestaurants() const
 {
 	return restaurants;
 }
+
+
+Base::Base(istream & stream) {
+
+}
+
+vector<Base> Base::readBasesFromFile() {
+
+	string fileLine;
+
+
+}
+
+

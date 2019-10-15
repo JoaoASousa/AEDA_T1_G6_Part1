@@ -5,6 +5,10 @@
 #include "Address.h"
 #include "People.h"
 #include "Restaurant.h"
+
+#include <fstream>
+
+
 using namespace std;
 
 class Base {
@@ -28,6 +32,9 @@ public:
 	Admin * getAdmin() const;
 	vector<Client*> getClients() const;
 	vector<Restaurant*> getRestaurants() const;
+
+	Base(istream & stream);
+	vector<Base> readBasesFromFile();
 
 };
 
