@@ -5,17 +5,7 @@ Vehicle::Vehicle()
 
 }
 
-Vehicle::Vehicle(istream & stream) //??????
-{
 
-}
-
-Vehicle::Vehicle(Date data, string tipo, string marca)
-{
-	registration_date = data;
-	type = tipo;
-	brand = marca;
-}
 
 Vehicle::~Vehicle()
 {
@@ -58,11 +48,6 @@ Person::Person()
 
 }
 
-Person::Person(string nm, size_t nif)
-{
-	name = nm;
-	NIF = nif;
-}
 
 Person::~Person()
 {
@@ -98,11 +83,7 @@ Worker::Worker()
 {
 }
 
-Worker::Worker(string nm, size_t nif, Date data, size_t salario) : Person(nm, nif)
-{
-	birthday = data;
-	wage = salario;
-}
+
 
 Worker::~Worker()
 {
@@ -139,15 +120,7 @@ Admin::Admin()
 
 }
 
-Admin::Admin(string nm, size_t nif, Date data, size_t salario, string papel) : Worker(nm, nif, data, salario)
-{
-	role = papel;
-}
 
-Admin::Admin(istream & stream) //esta merda tá a dar erro I DON´T GET IT
-{
-
-}
 
 Admin::~Admin()
 {
@@ -175,16 +148,6 @@ Delivery::Delivery()
 
 }
 
-Delivery::Delivery(istream & stream) //????
-{
-
-}
-
-Delivery::Delivery(string nm, size_t nif, Date data, size_t salario, Vehicle * veiculo, vector <Order*> historial) : Worker(nm, nif, data, salario)
-{
-	vehicle = veiculo;
-	history = historial;
-}
 
 Delivery::~Delivery()
 {
@@ -221,18 +184,7 @@ Client::Client()
 
 }
 
-Client::Client(istream & stream) //?????
-{
 
-}
-
-Client::Client(string nm, size_t nif,Address add, bool black, Base* b) : Person(nm, nif)
-{
-	address = add;
-	blacklisted = black;
-	base = b;
-
-}
 
 Client::~Client()
 {
@@ -244,14 +196,15 @@ void Client::setAddress(Address add)
 	address = add;
 }
 
-void Client::setBlackListed(bool black)
-{
-	blacklisted = black;
-}
 
 void Client::setBase(Base * b)
 {
 	base = b;
+}
+
+void Client::setValue(int v = 0)
+{
+	value = v;
 }
 
 Address Client::getAddress() const
@@ -259,14 +212,16 @@ Address Client::getAddress() const
 	return address;
 }
 
-bool Client::getBlackListed() const
-{
-	return blacklisted;
-}
+
 
 Base * Client::getBase() const
 {
 	return base;
+}
+
+int Client::getValue() const
+{
+	return value;
 }
 
 void Client::print() //implementar dps

@@ -96,6 +96,7 @@ public:
 class Client : public Person {
 	Address address;
 	Base * base;
+	int value;
 
 
 public:
@@ -104,11 +105,11 @@ public:
 	~Client();
 
 	void setAddress(Address add);
-	void setBlackListed(bool black);
 	void setBase(Base * b);
+	void setValue(int v = 0);
 	Address getAddress() const;
-	bool getBlackListed() const;
 	Base * getBase() const;
+	int getValue() const;
 
 	void print();
 };

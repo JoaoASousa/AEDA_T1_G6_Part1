@@ -6,14 +6,7 @@ Base::Base()
 
 }
 
-Base::Base(Address add, Coords coordenadas, Admin * administrador, vector<Client*> clients_vec, vector<Restaurant*> restaurants_vec)
-{
-	address = add;
-	coords = coordenadas;
-	admin = administrador;
-	clients = clients_vec;
-	restaurants = restaurants_vec;
-}
+
 
 Base::~Base() // não sei até que ponto será necessário
 {
@@ -21,15 +14,17 @@ Base::~Base() // não sei até que ponto será necessário
 }
 
 
+void Base::setDistrict(string d)
+{
+	district = d;
+}
+
 void Base::setAddress(Address add)
 {
 	address = add;
 }
 
-void Base::setCoords(Coords coordenadas)
-{
-	coords = coordenadas;
-}
+
 
 void Base::setAdmin(Admin * administrador)
 {
@@ -41,19 +36,40 @@ void Base::setClients(vector<Client*> clients)
 	this->clients = clients;
 }
 
+void Base::setClients(string filename) //em construcao
+{
+	ifstream clients_text;
+	clients_text.open(filename.c_str());
+	string textline;
+	while (getline(clients_text, textline))
+	{
+		Client cliente;
+		cliente.set_name(textline);
+		getline(clients_text, textline);
+		cliente.set_NIF(stoi(textline));
+		getline(clients_text, textline);
+		Address morada;
+		morada.parse(textline);
+		cliente.setAddress(morada);
+		getline(clients_text, textline);
+		cliente.setBase(textline);
+
+	}
+}
+
 void Base::setRestaurants(vector<Restaurant*> restaurants)
 {
 	this->restaurants = restaurants;
 }
 
+string Base::getDistrict() const
+{
+	return district;
+}
+
 Address Base::getAddress() const
 {
 	return address;
-}
-
-Coords Base::getCoords() const
-{
-	return coords;
 }
 
 Admin * Base::getAdmin() const
