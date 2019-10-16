@@ -1,0 +1,8 @@
+1 -> ID
+nome do restaurante
+fee (preço da entrega em  si - nao conta com o preco da comida)
+- <- mensagem de  erro ( "-" se for sucess; string com a mensagem do motivo se não for sucess)
+nome do delivery guy
+hora ; dia (date object)
+pepperooni : Pizza : 7   <- produtos
+conk : Drink : 2
