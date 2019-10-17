@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <fstream>
+#include <sstream>
 #include "Address.h"
 #include "People.h"
 #include "Restaurant.h"
@@ -11,6 +12,8 @@
 
 
 using namespace std;
+
+vector <Order> orders;
 
 class Base {
 private:
@@ -39,8 +42,12 @@ public:
 	Base(istream & stream);
 	vector<Base> readBasesFromFile();
 
-	friend Base find_base(vector <Base> bases, string d);
+
+
+
 };
+
+vector <Order> findOrders(string textile);
 
 #endif
 

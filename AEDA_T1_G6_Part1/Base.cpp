@@ -36,11 +36,16 @@ void Base::setClients(vector<Client*> clients)
 	this->clients = clients;
 }
 
+
+
+
+
 void Base::setClients(string filename) //em construcao
 {
 	ifstream clients_text;
 	clients_text.open(filename.c_str());
 	string textline;
+	vector <Client*> clients_vec;
 	while (getline(clients_text, textline))
 	{
 		Client cliente;
@@ -52,9 +57,13 @@ void Base::setClients(string filename) //em construcao
 		morada.parse(textline);
 		cliente.setAddress(morada);
 		getline(clients_text, textline);
-		cliente.setBase(textline);
-
+		cliente.setBase(this);
+		getline(clients_text, textline);
+		cliente.setOrders(findOrders(textline)); // n sei porque é que está a dar erro
+		getline(clients_text, textline);
+		clients_vec.push_back(&cliente);
 	}
+	clients = clients_vec;
 }
 
 void Base::setRestaurants(vector<Restaurant*> restaurants)
@@ -100,3 +109,19 @@ vector<Base> Base::readBasesFromFile() {
 }
 
 
+vector <Order> findOrders(string textline) // não sei se devemos trocar de metodo de pesquisa
+{
+	int id;
+	vector <Order> result;
+	stringstream ss(textline);
+	while (ss >> id)
+	{
+		for (int i = 0; i < orders.size(); i++)
+		{
+			if (id == orders[i].getID())
+				result.push_back(orders[i]);
+		}
+
+	}
+	return result;
+}

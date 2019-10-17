@@ -73,6 +73,7 @@ public:
 
 	~Order();
 
+	void setID(size_t i);
 	void setBase(Base * b);
 	void setRestaurant(Restaurant * r);
 	void setClient(Client * c);
@@ -81,6 +82,7 @@ public:
 	void setSuccess(bool s);
 	void setInsuccessMessage(string message);
 	void setDeliveryFee(size_t fee);
+	size_t getID() const;
 	Base * getBase() const;
 	Restaurant* getRestaurant() const;
 	Client * getClient() const;
@@ -89,6 +91,8 @@ public:
 	bool getSuccess() const;
 	string getInsuccessMessage() const;
 	size_t getDeliveryFee()const;
+
+
 	
 	
 	

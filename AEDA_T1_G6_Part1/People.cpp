@@ -202,9 +202,9 @@ void Client::setBase(Base * b)
 	base = b;
 }
 
-void Client::setValue(int v = 0)
-{
-	value = v;
+void Client::setOrders(vector <Order> orders_vec)
+{	
+	orders = orders_vec;
 }
 
 Address Client::getAddress() const
@@ -219,9 +219,9 @@ Base * Client::getBase() const
 	return base;
 }
 
-int Client::getValue() const
+vector <Order> Client::getOrders() const
 {
-	return value;
+	return orders;
 }
 
 void Client::print() //implementar dps

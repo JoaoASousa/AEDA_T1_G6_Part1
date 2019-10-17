@@ -50,6 +50,8 @@ Restaurant::~Restaurant()
 
 }
 
+
+
 void Restaurant::setAddress(Address add)
 {
 	address = add;
@@ -131,6 +133,11 @@ Order::~Order()
 
 }
 
+void Order::setID(size_t i)
+{
+	id = i;
+}
+
 void Order::setBase(Base * b)
 {
 	base = b;
@@ -170,6 +177,11 @@ void Order::setInsuccessMessage(string message)
 void Order::setDeliveryFee(size_t fee)
 {
 	delivery_fee = fee;
+}
+
+size_t Order::getID() const
+{
+	return id;
 }
 
 Base * Order::getBase() const

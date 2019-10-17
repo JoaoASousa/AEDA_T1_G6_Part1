@@ -96,7 +96,7 @@ public:
 class Client : public Person {
 	Address address;
 	Base * base;
-	int value;
+	vector <Order> orders;
 
 
 public:
@@ -104,12 +104,15 @@ public:
 
 	~Client();
 
+	
 	void setAddress(Address add);
 	void setBase(Base * b);
 	void setValue(int v = 0);
+	void setOrders(vector <Order> orders_vec);
 	Address getAddress() const;
 	Base * getBase() const;
 	int getValue() const;
+	vector <Order> getOrders() const;
 
 	void print();
 };
