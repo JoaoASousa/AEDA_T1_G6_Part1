@@ -98,12 +98,10 @@ class Client : public Person {
 	Base * base;
 	vector <Order> orders;
 
-
 public:
 	Client();
 
 	~Client();
-
 	
 	void setAddress(Address add);
 	void setBase(Base * b);

@@ -224,6 +224,23 @@ size_t Order::getDeliveryFee() const
 	return delivery_fee;
 }
  
+vector <Order> findOrders(string textline) // nao sei se devemos trocar de metodo de pesquisa
+{
+	int id;
+	vector <Order> result;
+	stringstream ss(textline);
+	while (ss >> id)
+	{
+		for (int i = 0; i < orders.size(); i++)
+		{
+			if (id == orders[i]->getID())
+				result.push_back(*orders[i]);
+		}
+
+	}
+	return result;
+}
+
 bool Order::calculate_fee() //implementar depois
 {
 

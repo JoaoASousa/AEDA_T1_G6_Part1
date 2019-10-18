@@ -6,11 +6,29 @@ Address::Address() {
 
 }
 
+Address::Address(string s){
+	vector<string> parts = utils::split(s,'/');
+
+	town = parts.at(0);
+	district = parts.at(1);
+	street = parts.at(2);
+	
+	try{
+	number = stoi(parts.at(3));
+	floor = stoi(parts.at(4));
+	latitude = stoi(parts.at(5));
+	longitude = stoi(parts.at(6));
+	}
+	catch (...){
+		//throw algo
+	}
+}
+
 Address::~Address() {
 
 }
 
-void Address::parse(string str) { //needs reinforcing lmao aka apanhar excecoes dos stois
+void Address::parse(string str) { //needs reinforcing aka apanhar excecoes dos stois
 	vector<string> parts = utils::split(str,'/');
 	for (auto &part : parts) utils::trim(part);
 

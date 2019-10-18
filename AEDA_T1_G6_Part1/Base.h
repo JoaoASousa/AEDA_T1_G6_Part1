@@ -13,19 +13,22 @@
 
 using namespace std;
 
-vector <Order> orders;
 
 class Base {
 private:
 	string district;
 	Address address;
-	Admin * admin;
+	string admin_name; //esta aldrabado, preciso pensar em melhor alternativa
 	vector<Client*> clients;
+	vector<Worker*> workers;
 	vector<Restaurant*> restaurants;
+
 public:
 	Base();
 
 	~Base();
+
+	void load(string path);
 	
 	void setDistrict(string d);
 	void setAddress(Address add);
@@ -47,7 +50,6 @@ public:
 
 };
 
-vector <Order> findOrders(string textile);
 
 #endif
 

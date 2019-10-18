@@ -8,6 +8,8 @@ using namespace std;
 
 //opertor overload fica em private ou public ???
 
+vector <Order*> orders;
+
 class Product {
 	string name;
 	string cuisine_type;
@@ -91,13 +93,14 @@ public:
 	bool getSuccess() const;
 	string getInsuccessMessage() const;
 	size_t getDeliveryFee()const;
+	
+	vector <Order> findOrders(string textile);
 
 
 	
 	
 	
-	
-	
+
 	
 	
 	bool calculate_fee();

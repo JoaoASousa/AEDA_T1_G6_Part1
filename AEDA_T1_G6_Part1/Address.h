@@ -16,6 +16,7 @@ class Address {
 
 public:
 	Address();
+	Address(string s);
 
 	~Address();
 	

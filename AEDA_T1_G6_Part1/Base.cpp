@@ -6,42 +6,48 @@ Base::Base()
 
 }
 
+Base::Base(istream & stream) {
+	string temp_s;
+	stream >> temp_s ; 
+	district = temp_s;
+	
+	stream >> temp_s ; 
+	address.parse(temp_s);
 
 
-Base::~Base() // não sei até que ponto será necessário
+
+
+}
+
+Base::~Base()
 {
 
 }
 
+void Base::load(string path){
 
-void Base::setDistrict(string d)
-{
+}
+
+void Base::setDistrict(string d){
 	district = d;
 }
 
-void Base::setAddress(Address add)
-{
+void Base::setAddress(Address add){
 	address = add;
 }
 
-
-
-void Base::setAdmin(Admin * administrador)
-{
+void Base::setAdmin(Admin * administrador){
 	admin = administrador;
 }
 
-void Base::setClients(vector<Client*> clients)
-{
+void Base::setClients(vector<Client*> clients){
 	this->clients = clients;
 }
 
 
 
 
-
-void Base::setClients(string filename) //em construcao
-{
+void Base::setClients(string filename){ //em construcao
 	ifstream clients_text;
 	clients_text.open(filename.c_str());
 	string textline;
@@ -59,46 +65,38 @@ void Base::setClients(string filename) //em construcao
 		getline(clients_text, textline);
 		cliente.setBase(this);
 		getline(clients_text, textline);
-		cliente.setOrders(findOrders(textline)); // n sei porque é que está a dar erro
+		cliente.setOrders(findOrders(textline)); // n sei porque ï¿½ que estï¿½ a dar erro
 		getline(clients_text, textline);
 		clients_vec.push_back(&cliente);
 	}
 	clients = clients_vec;
 }
 
-void Base::setRestaurants(vector<Restaurant*> restaurants)
-{
+void Base::setRestaurants(vector<Restaurant*> restaurants){
 	this->restaurants = restaurants;
 }
 
-string Base::getDistrict() const
-{
+string Base::getDistrict() const{
 	return district;
 }
 
-Address Base::getAddress() const
-{
+Address Base::getAddress() const{
 	return address;
 }
 
-Admin * Base::getAdmin() const
-{
-	return admin;
+Admin * Base::getAdmin() const{
+	for (auto & worker : workers){
+		if (worker->getName())
+	}
+	}
 }
 
-vector<Client*> Base::getClients() const
-{
+vector<Client*> Base::getClients() const{
 	return clients;
 }
 
-vector<Restaurant*> Base::getRestaurants() const
-{
+vector<Restaurant*> Base::getRestaurants() const{
 	return restaurants;
-}
-
-
-Base::Base(istream & stream) {
-
 }
 
 vector<Base> Base::readBasesFromFile() {
@@ -108,20 +106,3 @@ vector<Base> Base::readBasesFromFile() {
 
 }
 
-
-vector <Order> findOrders(string textline) // não sei se devemos trocar de metodo de pesquisa
-{
-	int id;
-	vector <Order> result;
-	stringstream ss(textline);
-	while (ss >> id)
-	{
-		for (int i = 0; i < orders.size(); i++)
-		{
-			if (id == orders[i].getID())
-				result.push_back(orders[i]);
-		}
-
-	}
-	return result;
-}
