@@ -1,17 +1,17 @@
 Porto
-Rua azul / asdasd / asdas d / 2323
+Porto / Gondomar / Rua azul / 34 / -1 / 234.435 / 998.235
 workers_p.txt
 clients_p.txt
 restaurants_p.txt
 ;;;
 Faro
-Rua amarela / asdasd / asdas d / 2323
+Faro / Tavira / Rua amarela / 94 / -1 / 123.765 / 237.235
 workers_f.txt
 clients_f.txt
 restaurants_f.txt
 ;;;
 Lisboa
-Rua verde / asdasd / asdas d / 2323
+Lisboa / Leiria / Rua roxa / 26 / -1 / 225.676 / 237.945
 workers_l.txt
 clients_l.txt
 restaurants_l.txt

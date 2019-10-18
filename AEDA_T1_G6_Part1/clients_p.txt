@@ -1,19 +1,19 @@
 Rafael Nadal
-Rua vermelha / asdasda
+Porto / Matosinhos / Avenida azul / 77 / -1 / 663.555 / 333.666
 231234324
 30
 ;;;
 Salvador Sobral
-Avenida azul / asdasd
+Porto / Gaia / Travessa verde / 97 / 2 / 232.554 / 233.643
 234567654
 10
 ;;;
 Rui Rio
-Vale dos gansos / asdasd
+Porto / Lousada / Vale dos Gansos / 22 / 12 / 234.666 / 114.543
 231234567
 3000
 ;;;
 ytka
-Unknown / asdasd
+Porto / Gondomar / Unknown / 34 / -1 / 234.435 / 998.235
 999999999
 0

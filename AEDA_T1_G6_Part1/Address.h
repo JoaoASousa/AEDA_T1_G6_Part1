@@ -6,8 +6,8 @@
 using namespace std;
 
 class Address {
-	string town;
 	string district;
+	string town;
 	string street;
 	unsigned int number;
 	int floor; //if non-aplicable, =-1
